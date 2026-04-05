@@ -1,0 +1,80 @@
+:root {
+  --emerald-deep: #022c22; /* A dark, luxurious forest green */
+  --emerald-glow: #10b981; /* For active links and buttons */
+  --glass-bg: rgba(2, 44, 34, 0.7); /* Translucent emerald */
+  --text-gold: #fbbf24; /* High-contrast accent for a premium feel */
+}
+body {
+  background: var(--emerald-deep);
+  color: var(--text-gold);
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 2rem;
+}
+
+a,
+button {
+  color: var(--emerald-glow);
+}
+
+a:hover,
+button:hover {
+  color: #ffffff;
+}
+
+button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+section {
+  padding: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+p {
+  line-height: 1.75;
+}
+
+.vip-border {
+  border: 2px solid;
+  border-image: linear-gradient(to bottom, #50C878, #023020) 1;
+}
+
+.premium-blur {
+  backdrop-filter: blur(25px) saturate(180%);
+}
+
+.glow-effect {
+  filter: drop-shadow(0 0 15px rgba(80, 200, 120, 0.6));
+}
+
+/* Restricted access logic:
+   if (user.tier !== 'emerald') { return <UpgradePrompt />; }
+*/

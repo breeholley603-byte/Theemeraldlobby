@@ -1,0 +1,10 @@
+# Node.js environment files
+.env
+node_modules/
+
+# IDE and editor config
+.config/
+
+# Large local files
+enterprise_gsync.msi
+vsstudio.deb
