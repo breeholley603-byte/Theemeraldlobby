@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const Stripe = require('stripe');
 const dotenv = require('dotenv');
@@ -5,6 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 const SUBSCRIPTION_API_KEY = process.env.SUBSCRIPTION_API_KEY;
@@ -40,6 +42,10 @@ app.post('/create-subscription', async (req, res) => {
     const status = error.statusCode || 500;
     return res.status(status).json({ error: error.message || 'Subscription API error' });
   }
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Emerald Lobby</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>The Emerald Lobby</h1>
+    <p>Subscribe to your membership plan with Stripe.</p>
+  </header>
+
+  <section class="card premium-blur vip-border">
+    <h2>Create a subscription</h2>
+    <form id="subscription-form">
+      <label for="customerId">Stripe Customer ID</label>
+      <input id="customerId" name="customerId" type="text" placeholder="cus_1234..." required />
+
+      <label for="planId">Stripe Price ID</label>
+      <input id="planId" name="planId" type="text" placeholder="price_1234..." required />
+
+      <button type="submit">Create Subscription</button>
+    </form>
+
+    <div id="result" class="glow-effect"></div>
+  </section>
+
+  <section class="card">
+    <h2>How to use</h2>
+    <p>Enter the Stripe customer ID and the price ID from your Stripe dashboard, then submit the form. The backend will call Stripe to create the subscription.</p>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
